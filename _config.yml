@@ -1,5 +1,5 @@
 theme: jekyll-theme-cayman
-title: Context-aware Attentional Pooling (CAP) for Fine-grained Visual Classification
-description: The Thirty-Fifth AAAI Conference on Artificial Intelligence 2021
+title: Attentional Learn-able Pooling for Human Activity Recognition
+description: IEEE International Conference on Robotics and Automation (ICRA) 2021
 github:
   is_project_page: false
