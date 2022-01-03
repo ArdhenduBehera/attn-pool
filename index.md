@@ -8,30 +8,27 @@ Human activity/behaviour monitoring and recognition is a key for facilitating hu
 ### Attentional Learn-able Pooling
 Our novel attention mechanism consists of two parts: 1) a sequential self-attention mechanism is used to selectively focus the high-level CNN representations on important temporal points. 2) The output of this sequential selfattention is fed into a bi-LSTM to capture the long-term temporal dependencies. We adapt the bi-LSTM to learn the structural information and similarities contained within its hidden states through Fisher Vectors (FVs). The FVs are based on a clustering mechanism that semantically groups information. By exploiting the LSTM hidden states, with learn-able FVs the network is able to take advantage of this information. The output of learn-able FVs is pooled using AAP to represent the number of states equalling the number of activity classes. The novel learn-able FVs with AAP replaces the customary Global Average Pooling (GAP).
 
-![Image](diagram.jpg)
-**High-level illustration of our model (left). The detailed architecture of our novel CAP (right).**
+![Image](figures-low.jpg)
+**The proposed deep network consists of: 1) a pre-trained CNN (Inception-ResNet-V2) model used to extract frame-wise high-level CNN features from a given video consisting of T frames. 2) a sequential self-attention layer to capture the contextual information consisting important spatial and temporal knowledge. 3) Learn-able AAP consisting a bidirectional LSTM (bi-LSTM) and FV to learn the structural information and similarities by exploring the hidden states of the bi-LSTM.**
 
-![Image](diagram2.jpg)
-**Learning pixel-level relationships from the convolutional feature map of size _W x H x C_. b) CAP using integral regions to capture both self and neighborhood contextual information. c) Encapsulating spatial structure of the integral regions using an LSTM. d) Classification by learnable aggregation of hidden states of the LSTM.**
+![Image](pooling-net.jpg)
+**The details of the proposed learn-able FV pooling using a bidirectional LSTM (bi-LSTM): The structural information in hidden states of the bi-LSTM is learned through FV with AAP.**
 
-### Paper and Supplementary Information
-Extended version of the accepted paper in [ArXiv](https://arxiv.org/abs/2101.06635).
+### Paper 
+[Preprint](https://research.edgehill.ac.uk/ws/files/37692462/icra_2021.pdf).
 
-[Supplementary Document](AAAI_Supplementary.pdf)
-
-[Source code](https://github.com/ArdhenduBehera/cap)
 
 ### Bibtex
 ```markdown
-@inproceedings{behera2021context,
-  title={Context-aware Attentional Pooling (CAP) for Fine-grained Visual Classification},
-  author={Behera, Ardhendu and Wharton, Zachary and Hewage, Pradeep and Bera, Asish},
-  booktitle={The Thirty-Fifth AAAI Conference on Artificial Intelligence},
+@inproceedings{debnath2021attentional,
+  title={Attentional Learn-able Pooling for Human Activity Recognition},
+  author={Debnath, Bappaditya and O'BRIEN, MARY and Kumar, Swagat and Behera, Ardhendu},
+  booktitle={IEEE International Conference on Robotics and Automation (ICRA)},
   year={2021},
-  organization={AAAI}
+  organization={Institute of Electrical and Electronics Engineers Inc.}
 }
 ```
 
 ### Acknowledgements
 
-This research was supported by the UKIERI (CHARM) under grant DST UKIERI-2018-19-10. The GPU is kindly donated by the NVIDIA Corporation.
+This research was supported by the Research Investment Fund (RIF) at Edge Hill University, and UKIERI (CHARM) under grant DST UKIERI-2018-19-10. The GPU is kindly donated by the NVIDIA Corporation.
